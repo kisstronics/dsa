@@ -1,13 +1,13 @@
 // breadth first search for graph 
 
-class Graph(){
+class Graph{
   constructor(){
     this.adjacencyList = {}
   }
 
   addVertex(vertex){
-    if(!this.adjacencyList[vetext]){
-      this.adjacencyList[vertext] = []
+    if(!this.adjacencyList[vertex]){
+      this.adjacencyList[vertex] = []
     }
   }
 
@@ -16,25 +16,26 @@ class Graph(){
     this.adjacencyList[v1].push(v1);
   }
 
-  bsf(startNode){
+  bfs(startNode){
     const queue = [startNode]
 
     const visited = {};
     const result = [];
 
     //makr the starting node as visited
-    visted[startNode] = true;
+    visited[startNode] = true;
 
-    while(queue.lenght > 0 ){
+    while(queue.length > 0 ){
       // remove the first element from the queue
       const currentNode = queue.shift();
       result.push(currentNode);
-
-      this.adjancyList[currentNode].forEach(neighbor => {
-        if(!visisted[neighbor]){
+      const adj = this.adjacencyList[currentNode];
+      for( const neighbor of adj){
+        if(!visited[neighbor]){
           visited[neighbor] = true;
           queue.push(neighbor);
-      });
+        }
+      }
     }
 
     return result;
@@ -61,4 +62,3 @@ g.addEdge("D", "E");
 
 console.log(g.bfs("A")); 
 // Output: [ 'A', 'B', 'C', 'D', 'E' ]
-
