@@ -14,8 +14,7 @@
 
 
 # Alogrithims
-1. Two Pointers
-2. Sliding windows
+1. Two Pointers / Sliding windows / Kadene's / Prefix sum
 3. Recursion
 4. Greedy
 5. Backtracking
